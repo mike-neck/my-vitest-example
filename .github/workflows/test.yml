@@ -1,0 +1,19 @@
+name: "vitest やるわよ〜〜〜〜"
+on:
+  push: {}
+  workflow_dispatch: {}
+
+jobs:
+  vitest-test:
+    name: "ごらんあそばせ"
+    runs-on: ubuntu-22.04
+    timeout-minutes: 10
+    steps:
+      - name: checkout
+        uses: actions/checkout@v1
+
+      - name: install dependencies
+        run: yarn install
+
+      - name: test
+        run: yarn test
